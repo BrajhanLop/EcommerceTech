@@ -3,8 +3,9 @@ import { initializeApp } from "firebase/app";
 import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore"
 import productsJson from './products.json';
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBjMBKlb_zTkdKKrvRkZE13qqt0_-OFoIA",
+  apiKey: import.meta.env.API_KEY,
   authDomain: "ecommerce-coder2022.firebaseapp.com",
   projectId: "ecommerce-coder2022",
   storageBucket: "ecommerce-coder2022.appspot.com",
