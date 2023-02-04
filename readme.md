@@ -1,4 +1,4 @@
-# ![WebApp](https://github.com/BrajhanLop/EcommerceTech/tree/main/src/images/ecomer.jpg)
+# ![WebApp](https://raw.githubusercontent.com/BrajhanLop/EcommerceTech/main/src/images/ecomer.jpg)
 ## ECOMMERCE BRAND WEB APP
 It is a technological commerce website where you can simulate the main processes of a virtual store, we can add our purchases and register to make the purchase.
 
