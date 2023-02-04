@@ -1,0 +1,105 @@
+
+.sidebar{
+    display: none;
+}
+
+@media (max-width: 800.98px) {
+    .sidebar {
+        display: inline-block;
+        /* height: calc(100vh - 80px); */
+        height: 100vh;
+        background-color: rgb(119, 118, 118);
+        width: 100vw;
+        position: absolute;
+        z-index: 50;
+        font-family: "Inter";
+        left: -1500px;
+      }
+      
+      .active{
+          left: 0;
+      }
+      
+      .sidebar-header {
+        padding: 0.4rem 0.4rem 0.8rem 0.8rem;
+        background-color: #eff2f4;
+        width: 80%;
+      }
+      
+      .sidebar-body {
+        height: calc(100vh - 100px);
+        width: 80%;
+        background-color: #ffffff;
+      }
+      .sidebar-close {
+        display: flex;
+        justify-content: end;
+        font-size: 25px;
+        color: #ffffff;
+        cursor: pointer;
+      }
+      .sidebar-user-icon {
+        font-size: 40px;
+        color: #bdc4cd;
+      }
+      
+      .sidebar-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+      
+        color: #1c1c1c;
+      }
+      
+      .sidebar-title:hover {
+          color: #000000;
+          cursor: pointer;
+          font-weight: 500;
+      }
+      .sidebar-li {
+        color: #8b96a5;
+        list-style: none;
+        margin-bottom: 1rem;
+        font-size: 16px;
+      }
+      
+      
+      
+      .sidebar-li2 {
+        list-style: none;
+        margin-bottom: 1rem;
+      }
+      
+      
+      
+      .sidebar-text-li {
+        color: #1c1c1c;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        margin-left: 0.7rem;
+          cursor: pointer;
+      }
+      
+      .sidebar-text-li:hover {
+      font-weight: 500;
+      }
+      .sidebar-li:hover {
+      color: black;
+      }
+      .sidebar-body {
+        padding: 1rem;
+      }
+      
+      .hr{
+        border: 1px solid #DEE2E7;
+        margin-bottom: 1rem;
+      }
+
+}
+
+@media (max-width: 575.98px) {
+    
+}
+

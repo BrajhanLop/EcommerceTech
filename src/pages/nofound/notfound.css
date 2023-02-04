@@ -1,0 +1,11 @@
+.nofound {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.nofound-img {
+    width: 80%;
+    height: 90%;
+}

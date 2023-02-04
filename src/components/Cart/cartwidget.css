@@ -1,0 +1,115 @@
+/* .card-widget {
+
+} */
+
+.card-widget h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;      
+    letter-spacing: -0.2px;   
+    color: #1C1C1C;
+}
+
+.card {
+    /* border: 1px solid #424242; */
+    height: 100%;
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    
+}
+
+.btns-cart{
+    display: flex;
+    
+}
+
+.desc-cart {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cart-img {
+    display: flex;
+    justify-content: stretch;
+}
+.volv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 0 10px;
+}
+.btn-del-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 5%;
+}
+.btn-pur {
+    display: flex;
+    justify-content: end;
+    gap: 2%;
+}
+.btn-remove{
+    
+    background-color: transparent;
+    border: 1px solid #fa3434;
+    color: #fa3434;
+   
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    width: 180px;
+    margin-right: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+    text-align: center;
+}
+
+.btn-remove:hover {
+background-color: #fa3434;
+color: white;
+border: none;
+}
+
+.btn-purchase:hover {
+    background-color: #00b517;
+    color: white;
+    border: none;
+}
+
+.btn-purchase {
+    background-color: transparent;
+    border: 1px solid #00b517;
+    color: #00b517;
+   
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    width: 180px;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+    text-align: center;
+}
+
+.img-cart-null {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
