@@ -11,15 +11,20 @@ import { productsbyId } from '../../../services/firebase';
 import { useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import NotFound from "../../../pages/nofound/NotFound";
+import Loading from "../../Loading/Loading";
 
 const ItemDetail = () => {
+const [isLoading, setisLoading] = useState(true)
 const [productId, setproductId]  = useState({})
 const { backHome, productadd, swit, backCart } = useContext(CartContext);
 const {id} = useParams();
 
 
 useEffect(()=> {
-  productsbyId(id).then(res => setproductId(res))
+  productsbyId(id).then(res => {
+    setproductId(res)
+    setisLoading(false)
+  })
   .catch(error => console.log(error))
   
 },[])
@@ -33,6 +38,9 @@ useEffect(()=> {
 <>
 
     {
+      isLoading ?
+      <Loading/>
+        :      
       productId ?
       
     <div className="product-detail">

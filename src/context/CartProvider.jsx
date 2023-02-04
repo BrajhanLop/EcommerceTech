@@ -9,6 +9,7 @@ const CartProvider = ({ children }) => {
   const [cart, setcart] = useState([]);
   const [cant, setcant] = useState(1);
   const [productadd, setproductadd] = useState(false);
+  
 
   const incrementCant = () => {
     setcant(cant + 1);
@@ -75,7 +76,8 @@ const CartProvider = ({ children }) => {
         setcart,
         deleteAll,
         goCheckin,
-        sumaTotal
+        sumaTotal,
+      
       }}
     >
       {children}
