@@ -208,6 +208,11 @@
   text-align: center;
 }
 
+.check-stockalt {
+  text-decoration:line-through;
+  color: #fa3434;
+}
+
 @media (max-width: 1199.98px) {
   .card-img-detail {
     width: 500px;
@@ -219,3 +224,4 @@
     flex-direction: column;
   }
 }
+

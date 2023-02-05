@@ -52,7 +52,7 @@ useEffect(()=> {
         />
       </div>
       <div className="detaill">
-        <p className="check-stock">
+        <p className={ productId.stock == 0? "check-stock check-stockalt" : "check-stock"}>
           <BsCheck2 /> In Stock
         </p>
         <div>

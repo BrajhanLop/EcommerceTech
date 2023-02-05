@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore"
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, updateDoc, where } from "firebase/firestore"
 import productsJson from './products.json';
 
 
@@ -17,32 +17,32 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 export default db;
 
-export const productosAll = async() => {
+export const productosAll = async () => {
 
-  const productRef = collection(db,"products")
+  const productRef = collection(db, "products")
   const productProtect = await getDocs(productRef)
-  
+
   const products = productProtect.docs.map(pro => ({ ...pro.data(), id: pro.id }))
-  
+
   return products;
 
 }
 
 export const productsbyId = async (id) => {
- 
+
   const productCollect = collection(db, "products")
- 
+
   const productIndiv = doc(productCollect, id);
 
   const obtenerDatos = await getDoc(productIndiv);
-  
+
   if (obtenerDatos._document == null) {
     return null;
   }
   return { ...obtenerDatos.data(), id: obtenerDatos.id };
 }
 
-export const obtenerProductosPorCategoria = async(category='') => {
+export const obtenerProductosPorCategoria = async (category = '') => {
 
   const productCollect = collection(db, "products")
 
@@ -52,7 +52,7 @@ export const obtenerProductosPorCategoria = async(category='') => {
 
   const products = productporCategoria.docs.map(pro => ({ ...pro.data(), id: pro.id }))
   return products;
-  
+
 }
 
 export const createOrder = async (data) => {
@@ -64,13 +64,28 @@ export const createOrder = async (data) => {
 
 }
 
-export const loadProducts = async() => {
+export const updateStock = async (cart) => {
+
+  for (let i = 0; i < cart.length; i++) {
+    const docRef = doc(db, "products", cart[i].id);
+
+    await updateDoc(docRef, {
+      stock: cart[i].stock - cart[i].cantidad
+    })
+
+  }
+
+}
+
+
+export const loadProducts = async () => {
   const productCollect = collection(db, "products")
 
   productsJson.forEach(data => {
     delete data.id;
     addDoc(productCollect, data)
   });
-  
+
 
 }
+

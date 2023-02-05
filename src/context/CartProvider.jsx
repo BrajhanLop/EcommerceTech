@@ -39,6 +39,11 @@ const CartProvider = ({ children }) => {
       return;
     }
 
+    if (prod.stock ==0 ) {
+      Swal.fire("Warning!", "the selected product is not available", "warning");
+      return;
+    }
+
     prod.cantidad = cant;
     prod.subtotal = cant * prod.precio;
     setcart([...cart, prod]);

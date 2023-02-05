@@ -12,7 +12,7 @@ const ItemCount = ({productId}) => {
     <div className="itemcount-container">
       <button className={cant < 2 ? "btn-count  btn-disabled" : "btn-count"} disabled={cant < 2} onClick={decrementCant}>-</button>
       <p className="numb"> {cant} </p>
-      <button className={cant == productId.stock ? "btn-count  btn-disabled" : "btn-count"} disabled={cant == productId.stock} onClick={incrementCant}>+</button>
+      <button className={cant == productId.stock || productId.stock == 0 ? "btn-count  btn-disabled"  : "btn-count"} disabled={cant == productId.stock || productId.stock == 0} onClick={incrementCant}>+</button>
       <button className="addcart" onClick={()=>addCart(productId)}>
         Add Cart
         <BsCartPlus className="cartico" />

@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { CartContext } from "../../context/CartContext";
-import { createOrder } from "../../services/firebase";
+import { createOrder, productosAll, updateStock } from "../../services/firebase";
 import "./checkinForm.css";
 
 const CheckinForm = () => {
   const { cart, sumaTotal, backHome, deleteAll } = useContext(CartContext);
 
 const navigate = useNavigate()
+
+const [productos, setproductos] = useState([])
+
+useEffect(()=> {
+  productosAll().then(res => setproductos(res))
+}, [])
+
+
+
+
+
 
   const checkOut = (e) => {
     e.preventDefault();
@@ -32,6 +43,7 @@ const navigate = useNavigate()
         "success"
       );
     });
+    updateStock(cart)
     deleteAll()
     backHome()
   };
@@ -60,6 +72,7 @@ const navigate = useNavigate()
             confirm
           </button>
           <button className="btn-remove" onClick={backCart}>back to Cart</button>
+          
         </div>
       </form>
     </div>
